@@ -110,8 +110,7 @@ dependencies {
         exclude group: 'com.android.support'
     }
     implementation files('libs/pinyin4j-2.5.0.jar')
-//    api (name:'citypicker',ext:'aar')
-    api project(":citypicker")
+//    api project(":citypicker")
     api project(":imagepicker")
 
 

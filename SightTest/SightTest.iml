@@ -272,7 +272,6 @@
     <orderEntry type="library" name="Gradle: com.github.markomilos:paginate-0.5.1" level="project" />
     <orderEntry type="library" name="Gradle: com.umeng.sdk:push-xiaomi-1.0.0" level="project" />
     <orderEntry type="module" module-name="CommonSDK" />
-    <orderEntry type="module" module-name="citypicker" />
     <orderEntry type="module" module-name="imagepicker" />
     <orderEntry type="module" module-name="CommonRes" />
     <orderEntry type="library" name="Gradle: org.apache.http.legacy-android-27" level="project" />
