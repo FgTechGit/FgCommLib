@@ -1,0 +1,119 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "USE_CANARY", "true"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "USE_CANARY", "false"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '28.0.3'
+
+//    repositories {
+//        flatDir {
+//            dirs 'libs'
+//        }
+//    }
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'me.jessyan:arms:2.4.1'
+    //tools
+    api(rootProject.ext.dependencies["arouter"]) {
+        exclude module: 'support-v4'
+        exclude module: 'support-annotations'
+    }
+    api rootProject.ext.dependencies["retrofit-url-manager"]
+    api rootProject.ext.dependencies["progressmanager"]
+    api rootProject.ext.dependencies["umeng-analytics"]
+    api rootProject.ext.dependencies["bottom-bar"]
+    api rootProject.ext.dependencies["smart-refresh"]
+    api rootProject.ext.dependencies["smart-refresh-header"]
+    api rootProject.ext.dependencies["qiniu-android"]
+    api rootProject.ext.dependencies["map-lib"]
+    api rootProject.ext.dependencies["map-search"]
+    api rootProject.ext.dependencies["map-location"]
+    api rootProject.ext.dependencies["lib-64k"]
+    api rootProject.ext.dependencies["cardview-v7"]
+    api rootProject.ext.dependencies["photoview"]
+    api rootProject.ext.dependencies["wheelpicker"]
+    api rootProject.ext.dependencies["exifinterface"]
+    api rootProject.ext.dependencies["circleimageview"]
+    api rootProject.ext.dependencies["pager-sliding-tab-Strip"]
+    api rootProject.ext.dependencies["lubanCompress"]
+    api rootProject.ext.dependencies["tablayout"]
+    api rootProject.ext.dependencies["kprogress"]
+    api rootProject.ext.dependencies["stepview"]
+    api rootProject.ext.dependencies["seekbar2"]
+    api rootProject.ext.dependencies["circleDialog"]
+    api rootProject.ext.dependencies["flexbox"]
+    api rootProject.ext.dependencies["adDialog"]
+    api rootProject.ext.dependencies["eventBus"]
+    api rootProject.ext.dependencies["number-progress"]
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    api rootProject.ext.dependencies["androidUtils"]
+    api rootProject.ext.dependencies["nicespinner"]
+    api rootProject.ext.dependencies["timerPickerLimit"]
+    api rootProject.ext.dependencies["SuperTextView"]
+    api rootProject.ext.dependencies["circleindicator"]
+    implementation files('libs/libddshare.jar')
+    implementation files('libs/umeng-common-1.5.3.jar')
+    api rootProject.ext.dependencies["umeng-push-sdk"]
+    api rootProject.ext.dependencies["umeng-huawei-push-sdk"]
+    api rootProject.ext.dependencies["umeng-xiaomi-push-sdk"]
+    api rootProject.ext.dependencies["switchbutton"]
+    api rootProject.ext.dependencies["rxbinding-v7"]
+    api rootProject.ext.dependencies["rxbinding"]
+    api rootProject.ext.dependencies["AdvancedWebView"]
+    api rootProject.ext.dependencies["paginate"]
+    api rootProject.ext.dependencies["lottie"]
+    implementation files('libs/SecurityEnvSDK-release-1.1.0.jar')
+    implementation files('libs/umeng-share-core-6.9.2.jar')
+    implementation files('libs/umeng-share-Ding-6.9.2.jar')
+    implementation files('libs/umeng-share-sina-simplify-6.9.2.jar')
+    implementation files('libs/umeng-share-wechat-simplify-6.9.2.jar')
+    implementation files('libs/umeng-shareboard-widget-6.9.2.jar')
+    implementation files('libs/umeng-sharetool-6.9.2.jar')
+    api rootProject.ext.dependencies["paginate"]
+    api rootProject.ext.dependencies["lottie"]
+    //下载的sdk
+    api(rootProject.ext.dependencies["aria-sdk"]) {
+        exclude group: 'com.android.support'
+    }
+    implementation files('libs/pinyin4j-2.5.0.jar')
+//    api (name:'citypicker',ext:'aar')
+    api project(":citypicker")
+    api project(":imagepicker")
+
+
+//    api project(":SuperTextView")
+}

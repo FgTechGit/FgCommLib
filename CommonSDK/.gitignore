@@ -1,0 +1,7 @@
+# Android/IntelliJ
+#
+build/
+.idea
+.pro
+local.properties
+*.iml

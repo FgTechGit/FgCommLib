@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.sighttechnology.armscomponent.commonres.view.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v4.view.ViewPager>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <me.relex.circleindicator.CircleIndicator
+                android:layout_marginBottom="10dp"
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                />
+            <FrameLayout
+                android:id="@+id/fl_in"
+                android:visibility="gone"
+                android:layout_above="@id/indicator"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="开启金牌经纪人之旅"
+                    android:textColor="@color/public_white"
+                    android:textSize="24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    />
+
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+</cn.sighttechnology.armscomponent.commonres.view.AutoLinearLayout>

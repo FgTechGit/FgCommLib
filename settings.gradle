@@ -1,0 +1,5 @@
+include ':SightTest',
+        ':CommonSDK',
+        ':CommonRes',
+        ':citypicker',
+        ':imagepicker', ':ocr_ui'
